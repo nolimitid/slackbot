@@ -8,7 +8,7 @@ var redis = require('redis')
   , operationComplete = false
   , ts = Math.floor(Date.now() / 1000);
 
-client = redis.createClient(process.env.OPENSHIFT_GEAR_DIR + '/tmp/redis.sock');
+client = redis.createClient(process.env.OPENSHIFT_GEAR_DIR + 'tmp/redis.sock');
 
 /*
  * TBD: there should be error handling on all of these to handle no reply responses.
