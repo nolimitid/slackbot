@@ -12,7 +12,7 @@ client = redis.createClient({
   host: process.env.OPENSHIFT_REDIS_HOST,
   port: process.env.OPENSHIFT_REDIS_PORT
 });
-client.auth(process.env.REDIS_PASSWORD)
+client.auth(process.env.REDIS_PASSWORD);
 
 /*
  * TBD: there should be error handling on all of these to handle no reply responses.

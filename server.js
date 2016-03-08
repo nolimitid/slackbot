@@ -24,4 +24,5 @@ server.on('error', function (error) {
 
 server.listen(port, hostname, function () {
   console.log('Up and running on port ' + port + " for " + hostname);
+  console.log(process.env);
 });
