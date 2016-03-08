@@ -37,6 +37,6 @@ exports.post = function (req, res, next) {
   }
   function confirmClosePoll(data) {
     console.log('confirmClosePoll: ' + slackRes);
-    res.json({text: slackRes});
+    res.json({response_type: 'in_channel', text: slackRes});
   }
 };

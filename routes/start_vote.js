@@ -59,7 +59,7 @@ exports.post = function(req, res, next) {
 
   function confirmNewPoll(data) {
     slackRes += '\nYour poll is set up. Please start voting for ' + tally.printPoll(JSON.parse(data));
-    res.json({text: slackRes});
+    res.json({response_type: 'in_channel', text: slackRes});
   }
 
 };

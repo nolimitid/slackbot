@@ -87,6 +87,6 @@ exports.post = function (req, res, next) {
 
   function handleResults() {
     slackRes = tally.printPoll(data);
-    res.json({text: slackRes});
+    res.json({response_type: 'in_channel', text: slackRes});
   }
 };
