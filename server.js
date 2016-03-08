@@ -13,10 +13,9 @@ server.use(function (request, response) {
     response.status(200).send("Alive and well.")
 });
 
-development = process.env.NODE_ENV === "development";
-port = process.env.port || process.env.PORT || (development ? 3000 : 80);
+port = process.env.OPENSHIFT_NODEJS_PORT;
 server.set('port',port);
-hostname = process.env.hostname || "127.0.0.1";
+hostname = process.env.OPENSHIFT_NODEJS_IP;
 
 server.on('error', function (error) {
   console.log(error);
