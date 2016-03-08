@@ -22,6 +22,7 @@ exports.post = function(req, res, next) {
   pollnameText = req.body.text;
   triggerWord = req.body.trigger_word;
   channelId = req.body.channel_id;
+  userId = req.body.user_id;
   pollnameText = pollnameText.replace(triggerWord + ' ','');
   poll = {
     'pollName': pollnameText,
@@ -29,7 +30,7 @@ exports.post = function(req, res, next) {
     'answers': []
   };
 
-  newPollID = 'activePoll_' + channelId;
+  newPollID = 'activePoll_' + channelId + '_' + userId;
 
   /*
    * Fetch and print current active poll.

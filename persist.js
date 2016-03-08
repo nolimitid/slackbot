@@ -51,6 +51,7 @@ var dbActions = {
       if (reply) {
         callback(reply);
       } else {
+        console.log('poll doesn\'t exist')
         callback(null);
       }
     });

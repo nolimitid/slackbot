@@ -12,7 +12,8 @@ exports.post = function (req, res, next) {
    */
   triggerWord = req.body.trigger_word;
   channelId = req.body.channel_id;
-  pollId = 'activePoll_' + channelId;
+  userId = req.body.user_id;
+  pollId = 'activePoll_' + channelId + '_' + userId;
 
   console.log('About to close the poll for pollId: ' + pollId);
   dbActions.getPoll(pollId, setData);
