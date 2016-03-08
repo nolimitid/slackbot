@@ -9,7 +9,8 @@ var redis = require('redis')
   , ts = Math.floor(Date.now() / 1000);
 
 client = redis.createClient({
-  port: '26379'
+  host: process.env.OPENSHIFT_REDIS_HOST,
+  port: process.env.OPENSHIFT_REDIS_PORT
 });
 client.auth(process.env.REDIS_PASSWORD)
 
